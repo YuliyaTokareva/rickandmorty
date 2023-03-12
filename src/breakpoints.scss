@@ -1,0 +1,26 @@
+$lg: 1400px;
+$md: 1024px;
+$xs: 360px;
+
+@mixin for-laptop-up {
+  @media screen and (min-width: ($lg)) {
+    @content;
+  }
+}
+@mixin for-tablet-up {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media screen and (min-width: $md) and (max-width: ($lg - 1)) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media screen and (max-width: ($md - 1)) {
+    @content;
+  }
+}
