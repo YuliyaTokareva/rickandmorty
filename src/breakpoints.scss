@@ -1,5 +1,5 @@
 $lg: 1400px;
-$md: 1024px;
+$md: 760px;
 $xs: 360px;
 
 @mixin for-laptop-up {
@@ -13,11 +13,11 @@ $xs: 360px;
   }
 }
 
-@mixin for-tablet {
-  @media screen and (min-width: $md) and (max-width: ($lg - 1)) {
-    @content;
-  }
-}
+// @mixin for-tablet {
+//   @media screen and (min-width: $md) and (max-width: ($lg - 1)) {
+//     @content;
+//   }
+// }
 
 @mixin for-tablet-down {
   @media screen and (max-width: ($md - 1)) {

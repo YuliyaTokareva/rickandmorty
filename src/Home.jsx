@@ -1,36 +1,25 @@
 import React from 'react';
-import { useNavigate, useLoaderData } from 'react-router-dom';
-import Logo from './movies/svg/Logo';
-import { ROUTES } from './routes';
+import { useLoaderData } from 'react-router-dom';
+import { getSortedByName } from './common/sortList';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import CardsBlock from './movies/components/cardsBlock/CardsBlock';
+
+import HeaderHome from './movies/components/headerHome/HeaderHome';
+import Search from './movies/components/search/Search';
 
 const Home = () => {
   const { results } = useLoaderData();
-
-  const navigate = useNavigate();
-
+  const { pathname } = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const textQuery = searchParams.get('search') || '';
+  const sortedListPerson = getSortedByName(results);
+  const params = {};
+  console.log(textQuery);
   return (
     <>
-      <Logo />
-      <article className="card" onClick={() => navigate(ROUTES.movieData(datat.id))}>
-        test
-      </article>
-      <h1>Home</h1>
-      <div className="list">
-        {results.map((movieData) => (
-          <article
-            className="card"
-            key={movieData.id}
-            onClick={() => navigate(ROUTES.movieData(movieData.id))}>
-            <div className="image">
-              <img src={`${movieData.image}`} alt={movieData.name} className="image__photo" />
-            </div>
-            <div className="text">
-              <h2 className="text__title">{movieData.name}</h2>
-              <p className="text__price">{movieData.species}</p>
-            </div>
-          </article>
-        ))}
-      </div>
+      <HeaderHome />
+      <Search params={params} />
+      <CardsBlock personData={sortedListPerson}></CardsBlock>
     </>
   );
 };

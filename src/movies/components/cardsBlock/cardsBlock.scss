@@ -1,0 +1,8 @@
+@import '../../../breakpoints.scss';
+@import 'src/variables.scss';
+.person-list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+  margin-bottom: 188px;
+}

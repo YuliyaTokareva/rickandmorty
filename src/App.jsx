@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './Home';
-import Movie from './pages/Movie';
+import PersonCard from './pages/PersonCard';
 import fetchAllList from '../src/movies/moviesGateway';
 import { ROUTES } from './routes';
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: ROUTES.movieData(),
-    element: <Movie />
+    element: <PersonCard />
   }
 ]);
 

@@ -1,0 +1,8 @@
+@import '../../../breakpoints.scss';
+@import 'src/variables.scss';
+.logo {
+  margin-top: 86px;
+  flex-shrink: 1;
+  width: 100%;
+  max-width: 600px;
+}

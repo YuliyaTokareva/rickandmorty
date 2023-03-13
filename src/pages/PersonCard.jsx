@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Movie = () => {
+const PersonCard = () => {
   return <h1>Movie page</h1>;
 };
 
-export default Movie;
+export default PersonCard;
