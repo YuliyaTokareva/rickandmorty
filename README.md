@@ -1,6 +1,6 @@
 <h1>Rick & Morty</h1>
 
-<h2><a href="https://shop-filter-0803.netlify.app/" rel="nofollow">live site link</a></h2>
+<h2><a href="https://rickandmorty-13-03-23.netlify.app/" rel="nofollow">live site link</a></h2>
 
 <h3>Design:</h3>
 
