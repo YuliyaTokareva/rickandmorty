@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './Home';
 import PersonCard from './pages/PersonCard';
-import fetchAllList from '../src/movies/moviesGateway';
+import fetchAllList, { fetchPersonByIdRouted } from '../src/movie/moviesGateway';
 import { ROUTES } from './routes';
 
 const router = createBrowserRouter([
@@ -13,7 +13,8 @@ const router = createBrowserRouter([
   },
   {
     path: ROUTES.movieData(),
-    element: <PersonCard />
+    element: <PersonCard />,
+    loader: fetchPersonByIdRouted
   }
 ]);
 

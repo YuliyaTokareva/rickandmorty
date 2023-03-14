@@ -2,10 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getSortedByName } from './common/sortList';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import CardsBlock from './movies/components/cardsBlock/CardsBlock';
+import CardsBlock from './movie/components/cardsBlock/CardsBlock';
 
-import HeaderHome from './movies/components/headerHome/HeaderHome';
-import Search from './movies/components/search/Search';
+import HeaderHome from './movie/components/headerHome/HeaderHome';
+import Search from './movie/components/search/Search';
 
 const Home = () => {
   const { results } = useLoaderData();
@@ -14,13 +14,13 @@ const Home = () => {
   const textQuery = searchParams.get('search') || '';
   const sortedListPerson = getSortedByName(results);
   const params = {};
-  console.log(textQuery);
+  // console.log(results);
   return (
-    <>
+    <div className="page-container">
       <HeaderHome />
       <Search params={params} />
       <CardsBlock personData={sortedListPerson}></CardsBlock>
-    </>
+    </div>
   );
 };
 
