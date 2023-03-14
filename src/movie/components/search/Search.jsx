@@ -4,21 +4,19 @@ import { useSearchParams } from 'react-router-dom';
 
 import './search.scss';
 
-const Search = ({ params }) => {
+const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('search') || '';
+  const searchQuery = searchParams.get('name') || '';
   const [count, setCount] = useState(searchQuery);
   const handleChange = (e) => {
     e.preventDefault();
-    setCount(e.target.value);
+    const searchData = e.target.value;
+    setCount(searchData);
+    if (searchData.length) setSearchParams({ name: searchData });
+
+    if (!searchData.length) setSearchParams({});
   };
-  // const handlerSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (count.length) params.search = count;
-  //   if (!count.length) delete params.search;
-  //   setSearchParams(params);
-  // };
-  console.log(searchQuery);
+
   return (
     <section className="search">
       <div className="search__line">

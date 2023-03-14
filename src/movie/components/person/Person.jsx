@@ -1,17 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { useLoaderData, Link } from 'react-router-dom';
 import ArrowBack from '../../svg/ArrowBack';
 import './person.scss';
 const Person = () => {
   const person = useLoaderData();
-  console.log(person);
+  const navigate = useNavigate();
+  function goBack() {
+    navigate(-1);
+  }
   return (
     <>
       <nav className="person-navigation">
-        <Link to="/">
+        <a onClick={goBack}>
           <ArrowBack />
           <span>GO BACK</span>
-        </Link>
+        </a>
       </nav>
       <div className="page-container">
         <div className="person-info">

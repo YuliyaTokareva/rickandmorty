@@ -1,11 +1,18 @@
 import React from 'react';
-import CardList from '../card/Card';
+import Card from '../card/Card';
 import './cardsBlock.scss';
-const CardsBlock = ({ personData }) => {
+const CardsBlock = ({ personData, searchError }) => {
+  if (personData.length === 0 && !searchError) {
+    return <p>Loading...</p>;
+  }
+  if (searchError) {
+    console.log('HHH');
+    return <p>Person not found</p>;
+  }
   return (
     <div className="person-list">
       {personData.map((person) => (
-        <CardList key={person.id} personData={person} />
+        <Card key={person.id} personData={person} />
       ))}
     </div>
   );

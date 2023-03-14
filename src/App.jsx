@@ -8,8 +8,7 @@ import { ROUTES } from './routes';
 const router = createBrowserRouter([
   {
     path: ROUTES.movies,
-    element: <Home />,
-    loader: fetchAllList
+    element: <Home />
   },
   {
     path: ROUTES.movieData(),

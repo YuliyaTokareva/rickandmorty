@@ -12,6 +12,10 @@
   flex-basis: 240px;
   height: 244px;
   cursor: pointer;
+  min-width: 240px;
+  @include for-tablet-up {
+    flex-grow: 0;
+  }
 }
 .image {
   height: 164px;

@@ -4,6 +4,7 @@ import { ROUTES } from '../../../routes';
 import './card.scss';
 const Card = ({ personData }) => {
   const navigate = useNavigate();
+
   return (
     <article className="card" onClick={() => navigate(ROUTES.movieData(personData.id))}>
       <div className="image" style={{ backgroundImage: `url(${personData.image})` }}></div>
