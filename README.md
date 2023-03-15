@@ -34,6 +34,7 @@ to be kept.</p>
 <li><a href="https://reactjs.org/" rel="nofollow">React</a></li>
 <li><a href="https://reactjs.org/docs/hooks-intro.html" rel="nofollow">React Hoocks</a></li>
 <li><a href="https://reactrouter.com/en/main" rel="nofollow">react-router-dom v6</a></li>
+<li><a href="https://www.typescriptlang.org/" rel="nofollow">TypeScript</a></li>
 <li><a href="https://eslint.org/" rel="nofollow">ESLint</a></li>
 <li><a href="https://webpack.js.org/" rel="nofollow">Webpack</a></li>
 <li><a href="https://babeljs.io/" rel="nofollow">Babel</a></li>
