@@ -4,7 +4,7 @@
 
 <h3>Design:</h3>
 
-<a href="https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&t=ma3cf4BCrhHZYJ0K-0">Figma</a><
+<a href="https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&t=ma3cf4BCrhHZYJ0K-0">Figma</a>
 
 <h3>Detailed:</h3>
 <a href="https://rickandmortyapi.com/documentation/">API</a>
