@@ -12,21 +12,38 @@
 <h3>Detailed:</h3>
 <li><a href="https://rickandmortyapi.com/documentation/">API</a></li>
 <p>React.</p>
-<p>HTML/SCSS бажано писати власні без використання UI бібліотек.
-2. Дизайн має бути адаптивний (як на макеті).
-3. При старті аплікації у користувача має йти запит до API і відмальовуватись
-список персонажів з мультфільму. Список персонажів має бути відсортований
-по імені.
-4. Клікнувши на окремого персонажа має йти запит по окремому персонажу і бути
-перенаправлення на інший роут з більш детальною інформацією про нього.
-5. Кнопка “go back” має перенаправляти на попередній роут зі списком персонажів.
-6. Реалізувати пошук серед персонажів по їх імені. (при введені імені персонажу
-список має фільтруватись і показувати лише співпадіння з пошуком, список
-персонажів також має бути відсортований по імені).
-7. При перезавантаженні сторінки чи переході по роутам дані пошуку мають
-зберігатись.
-8. Крім коду обов&#39;язково має бути лінка на задеплоєну аплікацію - інші
-варіанти не будуть розглядатись.</p>
+<p>
+1. It is preferable to write HTML/SCSS without using UI libraries.
+2. The design should be adaptive (as in the layout).
+3. At the start of the application, the user should receive a request to the API and it should be displayed
+list of cartoon characters. The list of characters must be sorted
+by name.
+4. After clicking on a separate character, a request for a separate character should go and be
+redirection to another route with more detailed information about it.
+5. The "go back" button should redirect to the previous route with a list of characters.
+6. Implement a search among characters by their name. (when entering the name of the character
+list should be filtered to show only matches with search, list
+characters should also be sorted by name).
+7. When reloading the page or going through the routes, the search data has
+to be kept.
+8. There must be a link to the deployed application</p>
+
+<h3>The tech stack is:</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/HTML5" rel="nofollow">HTML5</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" rel="nofollow">CSS3</a></li>
+<li><a href="https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout" rel="nofollow">Flexbox</a></li>
+<li><a href="https://sass-lang.com/" rel="nofollow">Sass (Scss)</a></li>
+<li><a href="https://en.bem.info/methodology/" rel="nofollow">BEM methodology</a></li>
+<li><a href="https://reactjs.org/" rel="nofollow">React</a></li>
+<li><a href="https://reactjs.org/docs/hooks-intro.html" rel="nofollow">React Hoocks</a></li>
+<li><a href="https://reactrouter.com/en/main" rel="nofollow">react-router-dom v6</a></li>
+<li><a href="https://eslint.org/" rel="nofollow">ESLint</a></li>
+<li><a href="https://webpack.js.org/" rel="nofollow">Webpack</a></li>
+<li><a href="https://babeljs.io/" rel="nofollow">Babel</a></li>
+
+</ul>
+
 <h3>Author</h3>
 <ul>
 <li>Yuliya Tokareva</li>
