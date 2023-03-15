@@ -4,29 +4,25 @@
 
 <h3>Design:</h3>
 
-<ul>
-<li><a href="https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&t=ma3cf4BCrhHZYJ0K-0">Figma</a></li>
-
-</ul>
+<a href="https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&t=ma3cf4BCrhHZYJ0K-0">Figma</a><
 
 <h3>Detailed:</h3>
-<li><a href="https://rickandmortyapi.com/documentation/">API</a></li>
+<a href="https://rickandmortyapi.com/documentation/">API</a>
 <p>React.</p>
-<p>
-1. It is preferable to write HTML/SCSS without using UI libraries.
-2. The design should be adaptive (as in the layout).
-3. At the start of the application, the user should receive a request to the API and it should be displayed
+<p>1. It is preferable to write HTML/SCSS without using UI libraries.</p>
+<p>2. The design should be adaptive (as in the layout).</p>
+<p>3. At the start of the application, the user should receive a request to the API and it should be displayed
 list of cartoon characters. The list of characters must be sorted
-by name.
-4. After clicking on a separate character, a request for a separate character should go and be
-redirection to another route with more detailed information about it.
-5. The "go back" button should redirect to the previous route with a list of characters.
-6. Implement a search among characters by their name. (when entering the name of the character
+by name.</p>
+<p>4. After clicking on a separate character, a request for a separate character should go and be
+redirection to another route with more detailed information about it.</p>
+<p>5. The "go back" button should redirect to the previous route with a list of characters.</p>
+<p>6. Implement a search among characters by their name. (when entering the name of the character
 list should be filtered to show only matches with search, list
-characters should also be sorted by name).
-7. When reloading the page or going through the routes, the search data has
-to be kept.
-8. There must be a link to the deployed application</p>
+characters should also be sorted by name).</p>
+<p>7. When reloading the page or going through the routes, the search data has
+to be kept.</p>
+<p>8. There must be a link to the deployed application</p>
 
 <h3>The tech stack is:</h3>
 <ul>
