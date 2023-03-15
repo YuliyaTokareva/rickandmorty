@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import ArrowBack from '../../svg/ArrowBack';
 import './person.scss';
+
 const Person = () => {
   const person = useLoaderData();
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Person = () => {
           <span>GO BACK</span>
         </a>
       </nav>
+
       <div className="page-container">
         <div className="person-info">
           <div className="person-img">

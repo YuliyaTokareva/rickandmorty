@@ -7,19 +7,21 @@
 
   a {
     text-decoration: none;
-    margin-left: 54px;
+    margin-left: 16px;
     line-height: 16px;
     display: flex;
     align-items: center;
-    color: #000000;
+    color: $color-dark;
     font-family: 'Karla', sans-serif;
     font-weight: 700;
     font-size: 18px;
     cursor: pointer;
+    @include for-tablet-up {
+      margin-left: 54px;
+    }
   }
   span {
     line-height: 21px;
-
     margin-left: 12px;
   }
 }
@@ -38,7 +40,7 @@
     max-height: 300px;
     border-radius: 50%;
     max-width: 100%;
-    border: 5px solid #f2f2f7;
+    border: $border-photo;
     box-sizing: content-box;
   }
 }
@@ -49,16 +51,17 @@
   text-align: center;
   flex-direction: column;
   margin-top: 11px;
+  margin-bottom: 142px;
   &__title {
     font-weight: 400;
     font-size: 48px;
     line-height: 56px;
-    color: #081f32;
+    color: $color-dark-gray;
   }
   &__sub-title {
     align-items: center;
     letter-spacing: 0.15px;
-    color: #8e8e93;
+    color: $color-gray;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -78,15 +81,15 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
-    color: #081f32;
+    color: $color-dark-gray;
   }
   &__description {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.25px;
-    color: #6e798c;
+    color: $color-main;
     padding-bottom: 12px;
-    border-bottom: 1px solid #6e798c29;
+    border-bottom: $border-line;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../routes';
 import './card.scss';
+
 const Card = ({ personData }) => {
   const navigate = useNavigate();
 

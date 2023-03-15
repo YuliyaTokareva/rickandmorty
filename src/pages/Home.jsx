@@ -1,10 +1,10 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { getSortedByName } from './common/sortList';
+import { getSortedByName } from '../common/sortList';
 import { useSearchParams } from 'react-router-dom';
-import CardsBlock from './movie/components/cardsBlock/CardsBlock';
-import { fetchList, fetchSearchList } from '../src/movie/moviesGateway';
-import HeaderHome from './movie/components/headerHome/HeaderHome';
-import Search from './movie/components/search/Search';
+import CardsBlock from '../movie/components/cardsBlock/CardsBlock';
+import { fetchList, fetchSearchList } from '../movie/moviesGateway';
+import HeaderHome from '../movie/components/headerHome/HeaderHome';
+import Search from '../movie/components/search/Search';
 
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams({});

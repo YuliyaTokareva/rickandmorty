@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Home from './Home';
+import Home from '../src/pages/Home';
 import PersonCard from './pages/PersonCard';
-import fetchAllList, { fetchPersonByIdRouted } from '../src/movie/moviesGateway';
+import { fetchPersonByIdRouted } from '../src/movie/moviesGateway';
 import { ROUTES } from './routes';
 
 const router = createBrowserRouter([

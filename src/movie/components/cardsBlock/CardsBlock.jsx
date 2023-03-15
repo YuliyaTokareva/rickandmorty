@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../card/Card';
 import './cardsBlock.scss';
+
 const CardsBlock = ({ personData, searchError }) => {
   if (personData.length === 0 && !searchError) {
     return <p>Loading...</p>;
