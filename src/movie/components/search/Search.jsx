@@ -16,12 +16,20 @@ const Search = () => {
 
     if (!searchData.length) setSearchParams({});
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (count.length) {
+      setSearchParams({ name: count });
+    } else {
+      setSearchParams({});
+    }
+  };
 
   return (
     <section className="search">
       <div className="search__line">
         <MagnifyingGlass />
-        <form name="searchForm" action="">
+        <form name="searchForm" onSubmit={(e) => handleSubmit(e)}>
           <input
             className="search__line-input"
             type="text"
