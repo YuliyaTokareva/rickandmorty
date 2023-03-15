@@ -1,15 +1,27 @@
 import { baseUrl } from '../env';
+import { Dispatch } from 'react';
+import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
 
-export const fetchPersonById = async (id) => {
+interface TodoLoaderFunctionArgs extends Omit<LoaderFunctionArgs, 'params'> {
+  params: {
+    id: string;
+  };
+}
+
+interface TodoLoaderFunction extends Omit<LoaderFunction, 'args'> {
+  (args: TodoLoaderFunctionArgs): Promise<Response> | Response | Promise<any> | any;
+}
+
+export const fetchPersonById = async (id: string) => {
   const response = await fetch(`${baseUrl}/${id}`);
   const data = await response.json();
   return data;
 };
-export const fetchPersonByIdRouted = ({ params: { id } }) => {
+export const fetchPersonByIdRouted: TodoLoaderFunction = ({ params: { id } }) => {
   return fetchPersonById(id);
 };
 
-export const fetchList = async (set) => {
+export const fetchList = async (set: Dispatch<React.SetStateAction<[]>>) => {
   try {
     const response = await fetch(baseUrl);
     if (!response.ok) {
@@ -28,7 +40,11 @@ export const fetchList = async (set) => {
   }
 };
 
-export const fetchSearchList = async (set, name, setSearchError) => {
+export const fetchSearchList = async (
+  set: Dispatch<React.SetStateAction<[]>>,
+  name: string,
+  setSearchError: Dispatch<React.SetStateAction<string>>
+) => {
   try {
     const response = await fetch(`${baseUrl}?name=${name}`);
     if (response.status === 404) {

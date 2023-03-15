@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, LoaderFunction } from 'react-router-dom';
 import Home from '../src/pages/Home';
 import PersonCard from './pages/PersonCard';
 import { fetchPersonByIdRouted } from '../src/movie/moviesGateway';
+
 import { ROUTES } from './routes';
 
 const router = createBrowserRouter([
@@ -13,11 +14,11 @@ const router = createBrowserRouter([
   {
     path: ROUTES.movieData(),
     element: <PersonCard />,
-    loader: fetchPersonByIdRouted
+    loader: fetchPersonByIdRouted as LoaderFunction
   }
 ]);
 
-const App = () => {
+const App: React.FC = () => {
   return <RouterProvider router={router} />;
 };
 

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "baseUrl": "./src",
+    "incremental": true,
+    "paths": {
+      "@components/*": ["movie/components/*"],
+      "@svg/*": ["movie/svg/*"],
+      "@entities/*": ["entities/*"],
+      "@common/*": ["common/*"],
+      "@img/*": ["img/*"]
+    }
+  },
+  "include": ["src"]
+}

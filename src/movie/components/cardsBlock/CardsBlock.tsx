@@ -1,13 +1,18 @@
 import React from 'react';
 import Card from '../card/Card';
+import { Character } from '@entities/Character';
 import './cardsBlock.scss';
 
-const CardsBlock = ({ personData, searchError }) => {
+type CardsBlockProps = {
+  personData: Character[];
+  searchError: string;
+};
+
+const CardsBlock: React.FC<CardsBlockProps> = ({ personData, searchError }) => {
   if (personData.length === 0 && !searchError) {
     return <p>Loading...</p>;
   }
   if (searchError) {
-    console.log('HHH');
     return <p>Person not found</p>;
   }
   return (

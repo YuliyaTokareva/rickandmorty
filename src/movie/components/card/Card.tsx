@@ -1,9 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../routes';
+import type { Character } from '@entities/Character';
 import './card.scss';
 
-const Card = ({ personData }) => {
+type CardProps = {
+  personData: Character;
+};
+const Card: React.FC<CardProps> = ({ personData }) => {
   const navigate = useNavigate();
 
   return (

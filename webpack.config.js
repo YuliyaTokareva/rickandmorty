@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -10,7 +11,7 @@ module.exports = (env, argv) => {
     mode = 'production';
   }
   const config = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     output: {
       filename: 'bundle.js'
     },
@@ -37,7 +38,13 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
-      extensions: ['.js', '.jsx', '.tsx', '.ts']
+      extensions: ['.js', '.jsx', '.tsx', '.ts'],
+      alias: {
+        '@img': path.resolve(__dirname, 'src/img/'),
+        '@svg': path.resolve(__dirname, 'src/movie/svg/'),
+        '@common': path.resolve(__dirname, 'src/common'),
+        '@components': path.resolve(__dirname, 'src/movie/components/')
+      }
     },
     plugins: [
       new webpack.ProgressPlugin(),

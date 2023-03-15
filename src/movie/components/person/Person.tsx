@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-import { useLoaderData } from 'react-router-dom';
-import ArrowBack from '../../svg/ArrowBack';
+import { useNavigate, useLoaderData } from 'react-router-dom';
+import ArrowBack from '@svg/ArrowBack';
+import type { Character } from '@entities/Character';
 import './person.scss';
 
-const Person = () => {
-  const person = useLoaderData();
+const Person: React.FC = () => {
+  const person = useLoaderData() as Character;
   const navigate = useNavigate();
   function goBack() {
     navigate(-1);
   }
+
   return (
     <>
       <nav className="person-navigation">
@@ -39,7 +39,7 @@ const Person = () => {
               </div>
               <div className="person-data__block">
                 <p className="person-data__title">Specie</p>
-                <p className="person-data__description">{person.specie ? person.specie : ''}</p>
+                <p className="person-data__description">{person.species ? person.species : ''}</p>
               </div>
               <div className="person-data__block">
                 <p className="person-data__title">Origin</p>

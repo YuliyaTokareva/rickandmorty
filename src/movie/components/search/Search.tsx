@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import MagnifyingGlass from '../../svg/MagnifyingGlass';
+import MagnifyingGlass from '@svg/MagnifyingGlass';
 import { useSearchParams } from 'react-router-dom';
 
 import './search.scss';
 
-const Search = () => {
+const Search: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('name') || '';
-  const [count, setCount] = useState(searchQuery);
-  const handleChange = (e) => {
+  const [count, setCount] = useState<string>(searchQuery);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const searchData = e.target.value;
     setCount(searchData);
@@ -16,7 +17,8 @@ const Search = () => {
 
     if (!searchData.length) setSearchParams({});
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (count.length) {
       setSearchParams({ name: count });
