@@ -16,10 +16,12 @@ const CardsBlock: React.FC<CardsBlockProps> = ({ personData, searchError }) => {
     return <p>Person not found</p>;
   }
   return (
-    <div className="person-list">
-      {personData.map((person) => (
-        <Card key={person.id} personData={person} />
-      ))}
+    <div className="person">
+      <div className="person-list">
+        {personData.map((person) => (
+          <Card key={person.id} personData={person} />
+        ))}
+      </div>
     </div>
   );
 };

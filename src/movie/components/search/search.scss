@@ -5,8 +5,10 @@
   justify-content: center;
   margin: auto;
   width: 100%;
-  margin-bottom: 60px;
-
+  margin: 32px 0;
+  @include for-tablet-up {
+    margin-bottom: 60px;
+  }
   &__line-svg {
     position: absolute;
     top: 50%;
