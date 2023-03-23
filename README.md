@@ -1,6 +1,6 @@
 <h1>Rick & Morty</h1>
 
-<h2><a href="https://rickandmorty-13-03-23.netlify.app/" rel="nofollow">live site link</a></h2>
+<a href="https://rickandmorty-13-03-23.netlify.app/" rel="nofollow"><img alt="Site link" src="https://img.shields.io/badge/-Live%20app%20%E2%86%92-green?&style=for-the-badge" /></a>
 
 <h3>Design:</h3>
 
@@ -8,6 +8,7 @@
 
 <h3>Detailed:</h3>
 <a href="https://rickandmortyapi.com/documentation/">API</a>
+
 <p>React.</p>
 <p>1. It is preferable to write HTML/SCSS without using UI libraries.</p>
 <p>2. The design should be adaptive (as in the layout).</p>
@@ -41,7 +42,8 @@ to be kept.</p>
 
 </ul>
 
-<h3>Author</h3>
+<h2>Author</h2>
+
 <ul>
 <li>Yuliya Tokareva</li>
 </ul>
