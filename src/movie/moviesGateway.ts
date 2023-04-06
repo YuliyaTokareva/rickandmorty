@@ -1,4 +1,6 @@
-import { baseUrl } from '../env';
+// import { baseUrl } from '../env';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 import { Dispatch } from 'react';
 import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
 
@@ -13,7 +15,7 @@ interface TodoLoaderFunction extends Omit<LoaderFunction, 'args'> {
 }
 
 export const fetchPersonById = async (id: string) => {
-  const response = await fetch(`${baseUrl}/${id}`);
+  const response = await fetch(`${BASE_URL}/${id}`);
   const data = await response.json();
   return data;
 };
@@ -23,11 +25,11 @@ export const fetchPersonByIdRouted: TodoLoaderFunction = ({ params: { id } }) =>
 
 export const fetchList = async (set: Dispatch<React.SetStateAction<[]>>) => {
   try {
-    const response = await fetch(baseUrl);
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
+    console.log(BASE_URL);
     const res = await response.json();
 
     if (!res) {
@@ -46,7 +48,7 @@ export const fetchSearchList = async (
   setSearchError: Dispatch<React.SetStateAction<string>>
 ) => {
   try {
-    const response = await fetch(`${baseUrl}?name=${name}`);
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}?name=${name}`);
     if (response.status === 404) {
       setSearchError('Person not found');
       console.error('Error:', 'Person not found');
