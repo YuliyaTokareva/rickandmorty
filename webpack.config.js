@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-
+const dotenv = require('dotenv').config();
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   let mode = 'development';
@@ -55,10 +55,14 @@ module.exports = (env, argv) => {
         template: './src/index.html'
       }),
       new webpack.DefinePlugin({
-        'process.env': {
-          REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
-        }
+        'process.env': JSON.stringify(dotenv.parsed)
       })
+
+      // new webpack.DefinePlugin({
+      //   'process.env': {
+      //     REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
+      //   }
+      // })
     ],
     devServer: {
       historyApiFallback: true,
