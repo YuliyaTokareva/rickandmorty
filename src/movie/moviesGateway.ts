@@ -2,7 +2,7 @@
 // process.env.REACT_APP_BASE_URL
 //`https://rickandmortyapi.com/api/character`;
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = `https://rickandmortyapi.com/api/character`;
 
 import { Dispatch } from 'react';
 import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
