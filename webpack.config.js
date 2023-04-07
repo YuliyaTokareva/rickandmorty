@@ -3,12 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+
+const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   let mode = 'development';
-
   if (process.env.NODE_ENV === 'production') {
     mode = 'production';
   }
@@ -54,7 +55,10 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html'
       }),
-      new Dotenv()
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(dotenv.parsed),
+        'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
+      })
     ],
     devServer: {
       historyApiFallback: true,
