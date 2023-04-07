@@ -2,10 +2,11 @@
 // process.env.REACT_APP_BASE_URL
 //`https://rickandmortyapi.com/api/character`;
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-console.log(process.env.REACT_APP_BASE_URL);
 import { Dispatch } from 'react';
 import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+// console.log(process.env.REACT_APP_BASE_URL);
 
 interface TodoLoaderFunctionArgs extends Omit<LoaderFunctionArgs, 'params'> {
   params: {
