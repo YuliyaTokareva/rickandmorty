@@ -14,7 +14,8 @@ module.exports = (env, argv) => {
   const config = {
     entry: './src/index.tsx',
     output: {
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist')
     },
     module: {
       rules: [
