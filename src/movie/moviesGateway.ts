@@ -2,7 +2,7 @@
 // process.env.REACT_APP_BASE_URL
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-
+console.log(BASE_URL);
 import { Dispatch } from 'react';
 import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ export const fetchList = async (set: Dispatch<React.SetStateAction<[]>>) => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    console.log(BASE_URL);
+
     const res = await response.json();
 
     if (!res) {

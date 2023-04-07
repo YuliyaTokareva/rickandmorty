@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development --devtool source-map",
-    "build": "webpack --mode=production  --env.production && echo '/* /index.html  200' | cat >dist/_redirects ",
+    "build": "webpack --mode=production  --env && echo '/* /index.html  200' | cat >dist/_redirects ",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
@@ -28,6 +28,7 @@
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
+    "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
