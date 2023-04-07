@@ -53,7 +53,8 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html'
-      })
+      }),
+      new Dotenv()
     ],
     devServer: {
       historyApiFallback: true,
