@@ -52,6 +52,11 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html'
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
+        }
       })
     ],
     devServer: {
