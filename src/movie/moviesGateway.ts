@@ -1,4 +1,6 @@
 // import { baseUrl } from '../env';
+// process.env.REACT_APP_BASE_URL
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 import { Dispatch } from 'react';
