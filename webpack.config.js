@@ -8,14 +8,14 @@ const Dotenv = require('dotenv-webpack');
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   let mode = 'development';
+
   if (process.env.NODE_ENV === 'production') {
     mode = 'production';
   }
   const config = {
     entry: './src/index.tsx',
     output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      filename: 'bundle.js'
     },
     module: {
       rules: [
