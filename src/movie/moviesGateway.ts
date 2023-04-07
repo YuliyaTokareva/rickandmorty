@@ -1,8 +1,8 @@
 // import { baseUrl } from '../env';
 // process.env.REACT_APP_BASE_URL
+//`https://rickandmortyapi.com/api/character`;
 
-const BASE_URL = `https://rickandmortyapi.com/api/character`;
-// process.env.REACT_APP_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 import { Dispatch } from 'react';
 import { LoaderFunction, LoaderFunctionArgs } from 'react-router-dom';
@@ -28,7 +28,7 @@ export const fetchPersonByIdRouted: TodoLoaderFunction = ({ params: { id } }) =>
 
 export const fetchList = async (set: Dispatch<React.SetStateAction<[]>>) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_BASE_URL}`);
+    const response = await fetch(`${BASE_URL}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -51,7 +51,7 @@ export const fetchSearchList = async (
   setSearchError: Dispatch<React.SetStateAction<string>>
 ) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_BASE_URL}?name=${name}`);
+    const response = await fetch(`${BASE_URL}?name=${name}`);
     if (response.status === 404) {
       setSearchError('Person not found');
       console.error('Error:', 'Person not found');
