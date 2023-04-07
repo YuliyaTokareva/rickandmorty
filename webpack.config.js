@@ -4,8 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
-const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-// const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   let mode = 'development';
@@ -16,7 +14,8 @@ module.exports = (env, argv) => {
   const config = {
     entry: './src/index.tsx',
     output: {
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist')
     },
     module: {
       rules: [
@@ -55,9 +54,10 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html'
       }),
-
       new webpack.DefinePlugin({
-        'process.env': JSON.stringify(dotenv.parsed)
+        'process.env': {
+          REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
+        }
       })
     ],
     devServer: {
