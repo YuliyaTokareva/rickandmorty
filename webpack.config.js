@@ -56,7 +56,8 @@ module.exports = (env, argv) => {
         template: './src/index.html'
       }),
       new Dotenv({
-        path: './.env' // путь к файлу .env
+        path: './.env',
+        safe: true
       })
     ],
     devServer: {
