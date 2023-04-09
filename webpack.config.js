@@ -4,13 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-// const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-// const isDevelopment = process.env.NODE_ENV !== 'production';
 
-// const { EnvironmentPlugin } = require('webpack');
-// const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-// const isDevelopment = process.env.NODE_ENV !== 'production';
-// const dotenv = require('dotenv').config();
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   let mode = 'development';
@@ -62,21 +56,8 @@ module.exports = (env, argv) => {
         template: './src/index.html'
       }),
       new Dotenv({
-        path: './my.env', // путь к файлу .env
-        safe: true, // пропускать только определенные переменные окружения
-        systemvars: true, // использовать переменные окружения из системы
-        defaults: true // загружать переменные окружения по умолчанию, если они не определены
+        path: './.env' // путь к файлу .env
       })
-      // new webpack.DefinePlugin({
-      //   'process.env': JSON.stringify(dotenv.parsed),
-      //   'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
-      // })
-
-      // new webpack.DefinePlugin({
-      //   'process.env': {
-      //     REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
-      //   }
-      // })
     ],
     devServer: {
       historyApiFallback: true,
