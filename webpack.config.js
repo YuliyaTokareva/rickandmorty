@@ -57,7 +57,7 @@ module.exports = (env, argv) => {
       }),
       new Dotenv({
         path: './.env',
-        safe: true
+        systemvars: true
       })
     ],
     devServer: {
