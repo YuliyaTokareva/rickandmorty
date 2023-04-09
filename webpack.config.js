@@ -3,9 +3,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-
-const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const Dotenv = require('dotenv-webpack');
+// const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
+// const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // const { EnvironmentPlugin } = require('webpack');
 // const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
@@ -61,13 +61,17 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html'
       }),
-      new webpack.DefinePlugin({
-        'process.env': JSON.stringify(dotenv.parsed),
-        'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
+      new Dotenv({
+        path: './my.env', // путь к файлу .env
+        safe: true, // пропускать только определенные переменные окружения
+        systemvars: true, // использовать переменные окружения из системы
+        defaults: true // загружать переменные окружения по умолчанию, если они не определены
       })
-      // new EnvironmentPlugin({
-      //   REACT_APP_BASE_URL: process.env.REACT_APP_BASE_URL
+      // new webpack.DefinePlugin({
+      //   'process.env': JSON.stringify(dotenv.parsed),
+      //   'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production')
       // })
+
       // new webpack.DefinePlugin({
       //   'process.env': {
       //     REACT_APP_BASE_URL: JSON.stringify(process.env.REACT_APP_BASE_URL)
